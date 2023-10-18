@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-router.post("/book", bookPost);
+router.post("/books", bookPost);
 router.get("/allbooks", getBook);
 router.get("/book/:id", getBookId);
 router.put("/books/:id", updateBook);
