@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Spinner from "../components/spinner";
+import Spinner from "../components/Spinner";
 import { Link } from "react-router-dom";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:3001/api/allbooks")
+      .get("http://localhost:3001/allbooks")
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);
@@ -66,7 +66,7 @@ function Home() {
                 </td>
                 <td className="border border-slate-700 rounded-md text-center">
                   <div className="flex justify-center gap-x-4">
-                    <Link to={`/books/details/${book._id}`}>
+                    <Link to={`/book/${book._id}`}>
                       <BsInfoCircle className="text-2xl text-green-800" />
                     </Link>
                     <Link to={`/books/edit/${book._id}`}>
